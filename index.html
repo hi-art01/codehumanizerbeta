@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Humanizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Code Humanizer</h1>
+    <div class="container">
+        <div class="io-container">
+            <textarea id="input-code" placeholder="Enter your AI-generated Python code here..."></textarea>
+            <textarea id="output-code" placeholder="Humanized code will appear here..." readonly></textarea>
+        </div>
+        <button id="humanize-btn">Humanize</button>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <div class="options-container">
+            <h2>Customization Options</h2>
+            <div class="basic-options">
+                <h3>Basic</h3>
+                <div>
+                    <input type="checkbox" id="add-comments" name="add-comments" checked>
+                    <label for="add-comments">Add Comments</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="convert-loops" name="convert-loops" checked>
+                    <label for="convert-loops">Convert For-Loops to List Comprehensions</label>
+                </div>
+                <label for="naming-convention">Naming Convention:</label>
+                <select id="naming-convention">
+                    <option value="snake_case">snake_case</option>
+                    <option value="camelCase">camelCase</option>
+                </select>
+            </div>
+            <div class="advanced-options">
+                <h3>Advanced</h3>
+                <p>More advanced options coming soon!</p>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
